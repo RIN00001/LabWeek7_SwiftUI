@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct LabWeek7_SwiftUIApp: App {
+    @StateObject private var petViewModel = PetViewModel(
+        petName: "RIN",
+        petImageName: "Default_RIN"
+    )
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(petViewModel)
         }
     }
 }
