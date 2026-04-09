@@ -5,7 +5,7 @@
 //  Created by student on 09/04/26.
 //
 
-#if os(iOS)
+
 import SwiftUI
 
 struct WalletBadge: View {
@@ -20,4 +20,4 @@ struct WalletBadge: View {
             .clipShape(Capsule())
     }
 }
-#endif
+

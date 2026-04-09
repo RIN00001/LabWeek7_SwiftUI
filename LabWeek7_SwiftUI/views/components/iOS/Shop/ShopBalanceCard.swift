@@ -5,7 +5,6 @@
 //  Created by student on 09/04/26.
 //
 
-#if os(iOS)
 import SwiftUI
 
 struct ShopBalanceCard: View {
@@ -35,4 +34,3 @@ struct ShopBalanceCard: View {
         )
     }
 }
-#endif

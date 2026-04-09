@@ -6,20 +6,85 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3F89FF582F877472002EC3B8 /* Omitrix Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3F89FF572F877472002EC3B8 /* Omitrix Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3F89FF592F877472002EC3B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F89FE632F8735E8002EC3B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F89FF562F877472002EC3B8;
+			remoteInfo = "Omitrix Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3F89FF642F877474002EC3B8 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				3F89FF582F877472002EC3B8 /* Omitrix Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3F89FE6B2F8735E8002EC3B8 /* LabWeek7_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabWeek7_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F89FF522F877472002EC3B8 /* Omitrix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Omitrix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F89FF572F877472002EC3B8 /* Omitrix Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Omitrix Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3F89007D2F877F0B002EC3B8 /* Exceptions for "LabWeek7_SwiftUI" folder in "Omitrix Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				models/ActionFeedbackItem.swift,
+				models/AppSection.swift,
+				models/PetAction.swift,
+				models/PetStat.swift,
+				models/PetStatType.swift,
+				viewmodels/PetViewModel.swift,
+				views/components/watchOS/WatchProgressBar.swift,
+				views/components/watchOS/WatchStatusRow.swift,
+				views/watchOS/WatchActionPage.swift,
+				views/watchOS/WatchPagerView.swift,
+				views/watchOS/WatchStatusView.swift,
+			);
+			target = 3F89FF562F877472002EC3B8 /* Omitrix Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3F89FE6D2F8735E8002EC3B8 /* LabWeek7_SwiftUI */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3F89007D2F877F0B002EC3B8 /* Exceptions for "LabWeek7_SwiftUI" folder in "Omitrix Watch App" target */,
+			);
 			path = LabWeek7_SwiftUI;
+			sourceTree = "<group>";
+		};
+		3F89FF5B2F877472002EC3B8 /* Lab Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Lab Watch App";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3F89FE682F8735E8002EC3B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F89FF542F877472002EC3B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				3F89FE6D2F8735E8002EC3B8 /* LabWeek7_SwiftUI */,
+				3F89FF5B2F877472002EC3B8 /* Lab Watch App */,
 				3F89FE6C2F8735E8002EC3B8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				3F89FE6B2F8735E8002EC3B8 /* LabWeek7_SwiftUI.app */,
+				3F89FF522F877472002EC3B8 /* Omitrix.app */,
+				3F89FF572F877472002EC3B8 /* Omitrix Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +138,47 @@
 			productReference = 3F89FE6B2F8735E8002EC3B8 /* LabWeek7_SwiftUI.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3F89FF512F877472002EC3B8 /* Omitrix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F89FF682F877474002EC3B8 /* Build configuration list for PBXNativeTarget "Omitrix" */;
+			buildPhases = (
+				3F89FF502F877472002EC3B8 /* Resources */,
+				3F89FF642F877474002EC3B8 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3F89FF5A2F877472002EC3B8 /* PBXTargetDependency */,
+			);
+			name = Omitrix;
+			packageProductDependencies = (
+			);
+			productName = Omitrix;
+			productReference = 3F89FF522F877472002EC3B8 /* Omitrix.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		3F89FF562F877472002EC3B8 /* Omitrix Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F89FF672F877474002EC3B8 /* Build configuration list for PBXNativeTarget "Omitrix Watch App" */;
+			buildPhases = (
+				3F89FF532F877472002EC3B8 /* Sources */,
+				3F89FF542F877472002EC3B8 /* Frameworks */,
+				3F89FF552F877472002EC3B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3F89FF5B2F877472002EC3B8 /* Lab Watch App */,
+			);
+			name = "Omitrix Watch App";
+			packageProductDependencies = (
+			);
+			productName = "Omitrix Watch App";
+			productReference = 3F89FF572F877472002EC3B8 /* Omitrix Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -81,6 +190,12 @@
 				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					3F89FE6A2F8735E8002EC3B8 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					3F89FF512F877472002EC3B8 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					3F89FF562F877472002EC3B8 = {
 						CreatedOnToolsVersion = 26.3;
 					};
 				};
@@ -100,12 +215,28 @@
 			projectRoot = "";
 			targets = (
 				3F89FE6A2F8735E8002EC3B8 /* LabWeek7_SwiftUI */,
+				3F89FF512F877472002EC3B8 /* Omitrix */,
+				3F89FF562F877472002EC3B8 /* Omitrix Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3F89FE692F8735E8002EC3B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F89FF502F877472002EC3B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F89FF552F877472002EC3B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +253,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3F89FF532F877472002EC3B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3F89FF5A2F877472002EC3B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F89FF562F877472002EC3B8 /* Omitrix Watch App */;
+			targetProxy = 3F89FF592F877472002EC3B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3F89FE742F8735EA002EC3B8 /* Debug */ = {
@@ -306,6 +452,100 @@
 			};
 			name = Release;
 		};
+		3F89FF622F877474002EC3B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_KEY_CFBundleDisplayName = Omitrix;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Rifki.Omitrix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3F89FF632F877474002EC3B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_KEY_CFBundleDisplayName = Omitrix;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Rifki.Omitrix;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3F89FF652F877474002EC3B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Omitrix;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Rifki.Omitrix.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Debug;
+		};
+		3F89FF662F877474002EC3B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Omitrix;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Rifki.Omitrix.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -323,6 +563,24 @@
 			buildConfigurations = (
 				3F89FE772F8735EA002EC3B8 /* Debug */,
 				3F89FE782F8735EA002EC3B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F89FF672F877474002EC3B8 /* Build configuration list for PBXNativeTarget "Omitrix Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F89FF652F877474002EC3B8 /* Debug */,
+				3F89FF662F877474002EC3B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F89FF682F877474002EC3B8 /* Build configuration list for PBXNativeTarget "Omitrix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F89FF622F877474002EC3B8 /* Debug */,
+				3F89FF632F877474002EC3B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

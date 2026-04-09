@@ -5,7 +5,7 @@
 //  Created by student on 09/04/26.
 //
 
-#if os(iOS)
+
 import SwiftUI
 
 struct HomePetCard: View {
@@ -51,4 +51,4 @@ struct HomePetCard: View {
         )
     }
 }
-#endif
+

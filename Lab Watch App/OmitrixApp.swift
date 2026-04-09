@@ -8,10 +8,17 @@
 import SwiftUI
 
 @main
-struct Omitrix_Watch_AppApp: App {
+struct OmitrixApp: App {
+    @StateObject private var petViewModel = PetViewModel(
+        petName: "RIN",
+        petImageName: "Default_RIN"
+    )
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(petViewModel)
         }
     }
 }
+
