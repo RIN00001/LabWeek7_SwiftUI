@@ -10,15 +10,19 @@ import SwiftUI
 
 struct AboutInfoCard: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Name: Rifki Indra Nugroho")
-            Text("NIM: 0706012410033")
-            Text("Class: Mobile App Development Class A")
-            Text("Week: 7")
-            Text("Learning: SwiftUI watchOS and iPadOS navigation")
+        VStack {
+            VStack(spacing: 10) {
+                Text("Name: Rifki Indra Nugroho")
+                Text("NIM: 0706012410033")
+                Text("Class: Mobile App Development Class A")
+                Text("Week: 7")
+                Text("Learning: SwiftUI watchOS and iPadOS navigation")
+            }
+            .font(.subheadline)
+            .multilineTextAlignment(.center)
+            .frame(maxWidth: 320)
+            .frame(maxWidth: .infinity)
         }
-        .font(.subheadline)
-        .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 18)

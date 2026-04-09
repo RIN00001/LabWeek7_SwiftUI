@@ -48,7 +48,8 @@ struct ShopUpgradeCard: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 18)
-                .fill(Color(.secondarySystemBackground))
+                .fill(Color.white)
+                .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 2)
         )
     }
 }

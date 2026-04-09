@@ -31,7 +31,7 @@ struct AboutView: View {
             .padding()
         }
         .navigationTitle("About")
-        .background(Color(.systemGroupedBackground))
+        .background(Color(.white))
     }
 }
 #endif

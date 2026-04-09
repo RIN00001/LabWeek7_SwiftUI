@@ -28,11 +28,13 @@ struct HomeStatCard: View {
                 Text(valueText)
                     .font(.caption.bold())
                     .foregroundStyle(.secondary)
+                    .animation(.easeInOut(duration: 0.3), value: valueText)
             }
 
             ProgressView(value: progress)
                 .tint(tint)
                 .scaleEffect(y: 1.5)
+                .animation(.easeInOut(duration: 0.3),value: progress)
 
             Button(action: action) {
                 Text(buttonTitle)

@@ -89,59 +89,62 @@ final class PetViewModel: ObservableObject {
 
         var newFeedback: [ActionFeedbackItem] = []
         let gainAmount = Int.random(in: 20...40)
+        withAnimation(.easeInOut(duration: 0.35)) {
+            switch action {
+                
+                
+            case .play:
+                increase(.fun, by: gainAmount)
+                newFeedback.append(ActionFeedbackItem(text: "+\(gainAmount) Fun", color: .green))
 
-        switch action {
-        case .play:
-            increase(.fun, by: gainAmount)
-            newFeedback.append(ActionFeedbackItem(text: "+\(gainAmount) Fun", color: .green))
+                let moneyGain = Int.random(in: 20...30)
+                money += moneyGain
+                newFeedback.append(ActionFeedbackItem(text: "+$\(moneyGain) Wallet", color: .green))
 
-            let moneyGain = Int.random(in: 20...30)
-            money += moneyGain
-            newFeedback.append(ActionFeedbackItem(text: "+$\(moneyGain) Wallet", color: .green))
+                decrease(.energy, by: actionPenaltyAmount)
+                newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Energy", color: .red))
 
-            decrease(.energy, by: actionPenaltyAmount)
-            newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Energy", color: .red))
+                decrease(.cleanliness, by: actionPenaltyAmount)
+                newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Cleanliness", color: .red))
 
-            decrease(.cleanliness, by: actionPenaltyAmount)
-            newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Cleanliness", color: .red))
+                statusMessage = "\(petName) had fun and earned some money."
 
-            statusMessage = "\(petName) had fun and earned some money."
+            case .clean:
+                increase(.cleanliness, by: gainAmount)
+                newFeedback.append(ActionFeedbackItem(text: "+\(gainAmount) Cleanliness", color: .green))
 
-        case .clean:
-            increase(.cleanliness, by: gainAmount)
-            newFeedback.append(ActionFeedbackItem(text: "+\(gainAmount) Cleanliness", color: .green))
+                decrease(.fun, by: actionPenaltyAmount)
+                newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Fun", color: .red))
 
-            decrease(.fun, by: actionPenaltyAmount)
-            newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Fun", color: .red))
+                decrease(.energy, by: actionPenaltyAmount)
+                newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Energy", color: .red))
 
-            decrease(.energy, by: actionPenaltyAmount)
-            newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Energy", color: .red))
+                statusMessage = "\(petName) is much cleaner now."
 
-            statusMessage = "\(petName) is much cleaner now."
+            case .feed:
+                money -= feedCost
+                newFeedback.append(ActionFeedbackItem(text: "-$\(feedCost) Wallet", color: .red))
 
-        case .feed:
-            money -= feedCost
-            newFeedback.append(ActionFeedbackItem(text: "-$\(feedCost) Wallet", color: .red))
+                increase(.hunger, by: gainAmount)
+                newFeedback.append(ActionFeedbackItem(text: "+\(gainAmount) Hunger", color: .green))
 
-            increase(.hunger, by: gainAmount)
-            newFeedback.append(ActionFeedbackItem(text: "+\(gainAmount) Hunger", color: .green))
+                decrease(.cleanliness, by: actionPenaltyAmount)
+                newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Cleanliness", color: .red))
 
-            decrease(.cleanliness, by: actionPenaltyAmount)
-            newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Cleanliness", color: .red))
+                statusMessage = "\(petName) has been fed."
 
-            statusMessage = "\(petName) has been fed."
+            case .rest:
+                increase(.energy, by: gainAmount)
+                newFeedback.append(ActionFeedbackItem(text: "+\(gainAmount) Energy", color: .green))
 
-        case .rest:
-            increase(.energy, by: gainAmount)
-            newFeedback.append(ActionFeedbackItem(text: "+\(gainAmount) Energy", color: .green))
+                decrease(.fun, by: actionPenaltyAmount)
+                newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Fun", color: .red))
 
-            decrease(.fun, by: actionPenaltyAmount)
-            newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Fun", color: .red))
+                decrease(.hunger, by: actionPenaltyAmount)
+                newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Hunger", color: .red))
 
-            decrease(.hunger, by: actionPenaltyAmount)
-            newFeedback.append(ActionFeedbackItem(text: "-\(actionPenaltyAmount) Hunger", color: .red))
-
-            statusMessage = "\(petName) got some rest."
+                statusMessage = "\(petName) got some rest."
+            }
         }
 
         if handleDeathIfNeeded() {
@@ -210,8 +213,10 @@ final class PetViewModel: ObservableObject {
     private func drainStats() {
         guard !isDead else { return }
 
-        for type in PetStatType.allCases {
-            decrease(type, by: passiveDrainAmount)
+        withAnimation(.linear(duration: 0.25)) {
+            for type in PetStatType.allCases {
+                decrease(type, by: passiveDrainAmount)
+            }
         }
 
         if handleDeathIfNeeded() {
